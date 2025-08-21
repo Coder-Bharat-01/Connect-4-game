@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect 4 Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Page 1: Welcome -->
+  <div id="welcomePage" class="page active">
+    <h1>Welcome to Game World</h1>
+    <button id="startBtn" class="btn">Start Game</button>
+  </div>
+
+  <!-- Page 2: Player Setup -->
+  <div id="setupPage" class="page">
+    <h2>Enter Player Details</h2>
+    <form id="setupForm">
+      <label>Player 1 Name:</label>
+      <input type="text" id="player1Name" required>
+      <label>Player 1 Color:</label>
+      <select id="player1Color">
+        <option value="red">Red</option>
+        <option value="yellow">Yellow</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+      </select>
+
+      <label>Player 2 Name:</label>
+      <input type="text" id="player2Name" required>
+      <label>Player 2 Color:</label>
+      <select id="player2Color">
+        <option value="red">Red</option>
+        <option value="yellow">Yellow</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+      </select>
+
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </div>
+
+  <!-- Page 3: Game Page -->
+  <div id="gamePage" class="page">
+    <div class="headerBox">
+      <h2>4 Connect Game</h2>
+    </div>
+    <div class="playersBox">
+      <div id="player1Box" class="playerBox"></div>
+      <div id="player2Box" class="playerBox"></div>
+    </div>
+    <div id="board"></div>
+    <p id="status"></p>
+  </div>
+
+  <!-- POPUP on Game Over -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <h2 id="popupMessage"></h2>
+      <button id="restartBtn" class="btn">Restart Game</button>
+    </div>
+  </div>
+
+  <!-- Sounds -->
+  <audio id="dropSound" src="Sounds/loud-thud-45719.mp3" preload="auto"></audio>
+  <audio id="winSound" src="Sounds/victorymale-version-230553.mp3" preload="auto"></audio>
+
+  <!-- Confetti -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
